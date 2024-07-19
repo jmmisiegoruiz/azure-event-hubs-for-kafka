@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-kafka-eh-producer
+  kafka:
+    bootstrap-servers: starkehns.servicebus.windows.net:9093
+    properties:
+      security:
+        protocol: SASL_SSL
+      sasl:
+        jaas:
+          config: org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;
+        mechanism: OAUTHBEARER
+        login:
+          callback:
+            handler: CustomAuthenticateCallbackHandler
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: $Default
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
