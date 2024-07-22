@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class Producer {
 
     private static final Logger logger = LoggerFactory.getLogger(Producer.class);
-    private static final String TOPIC = "purchases";
+    private static final String TOPIC = "test";
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
