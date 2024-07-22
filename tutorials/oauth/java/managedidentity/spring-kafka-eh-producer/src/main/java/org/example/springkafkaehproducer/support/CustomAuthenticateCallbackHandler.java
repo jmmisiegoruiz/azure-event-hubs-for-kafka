@@ -28,7 +28,7 @@ import org.apache.kafka.common.security.oauthbearer.OAuthBearerTokenCallback;
 public class CustomAuthenticateCallbackHandler implements AuthenticateCallbackHandler {
 
     final static ScheduledExecutorService EXECUTOR_SERVICE = Executors.newScheduledThreadPool(1);
-    final static MSICredentials CREDENTIALS = new MSICredentials();
+    final static MSICredentials CREDENTIALS = new MSICredentials().withClientId("825de494-b35a-4bfd-9f5e-9136a3729007");
     // Use AppServiceMSICredentials instead for App Service deployment.
     // final static AppServiceMSICredentials CREDENTIALS = new AppServiceMSICredentials(AzureEnvironment.AZURE);
     
