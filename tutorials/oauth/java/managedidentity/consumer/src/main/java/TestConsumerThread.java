@@ -27,7 +27,7 @@ public class TestConsumerThread implements Runnable {
             while (true) {
                 final ConsumerRecords<Long, String> consumerRecords = consumer.poll(1000);
                 for(ConsumerRecord<Long, String> cr : consumerRecords) {
-                    System.out.printf("Consumer Record:(%d, %s, %d, %d)\n", cr.key(), cr.value(), cr.partition(), cr.offset());
+                    System.out.printf("Consumer Record:(%s, %s, %d, %d)\n", cr.key(), cr.value(), cr.partition(), cr.offset());
                 }
                 consumer.commitAsync();
             }
