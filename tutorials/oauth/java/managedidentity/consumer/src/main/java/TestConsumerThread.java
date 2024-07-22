@@ -1,7 +1,6 @@
 //Copyright (c) Microsoft Corporation. All rights reserved.
 //Licensed under the MIT License.
 import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
@@ -46,7 +45,7 @@ public class TestConsumerThread implements Runnable {
                 properties.put(ConsumerConfig.CLIENT_ID_CONFIG, "KafkaExampleConsumer#" + id);
                 id++;
             }
-            properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
+            properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
             properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
 
             //Get remaining properties from config file
