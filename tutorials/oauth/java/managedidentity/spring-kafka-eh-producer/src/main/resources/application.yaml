@@ -12,7 +12,7 @@ spring:
         mechanism: OAUTHBEARER
         login:
           callback:
-            handler: CustomAuthenticateCallbackHandler
+            handler.class: org.example.springkafkaehproducer.support.CustomAuthenticateCallbackHandler
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
